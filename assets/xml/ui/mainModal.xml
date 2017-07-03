@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<data id="mainModal">
+    <visibility>VISIBLE</visibility>
+    <verticalAlignment>TOP</verticalAlignment>
+    <horizontalAlignment>CENTER</horizontalAlignment>
+    <children length="2">
+        <value class="org.mini2Dx.ui.element.Row" id="headerRow">
+            <visibility>VISIBLE</visibility>
+            <children length="1">
+                <value class="org.mini2Dx.ui.element.Image" id="peopleHeader">
+                    <visibility>VISIBLE</visibility>
+                    <texturePath>texture/ui/main/people_header.png</texturePath>
+                </value>
+            </children>
+            <children length="1">
+                <value class="org.mini2Dx.ui.element.TextButton" id="textButton">
+                    <visibility>VISIBLE</visibility>
+                    <children length="1">
+                        <value class="org.mini2Dx.ui.element.Label">
+                            <visibility>VISIBLE</visibility>
+                            <text>TEST</text>
+                            <horizontalAlignment>CENTER</horizontalAlignment>
+                        </value>
+                    </children>
+                </value>
+            </children>
+        </value>
+    </children>
+</data>
