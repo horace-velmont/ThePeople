@@ -9,6 +9,7 @@ import com.badlogic.gdx.assets.loaders.resolvers.InternalFileHandleResolver;
 import com.badlogic.gdx.graphics.Color;
 import org.mini2Dx.core.Mdx;
 import org.mini2Dx.core.assets.FallbackFileHandleResolver;
+import org.mini2Dx.core.di.annotation.Autowired;
 import org.mini2Dx.core.game.GameContainer;
 import org.mini2Dx.core.graphics.Graphics;
 import org.mini2Dx.core.screen.BasicGameScreen;
@@ -20,6 +21,7 @@ import org.mini2Dx.ui.UiThemeLoader;
 import org.mini2Dx.ui.element.AlignedModal;
 import org.mini2Dx.ui.style.UiTheme;
 import web.game.people.PeopleGame;
+import web.game.people.gameData.UserData;
 
 /**
  * Created by Velmont on 2017-07-03.
@@ -28,6 +30,8 @@ public class PeopleScreen extends BasicGameScreen {
     public static int ID = 0;
     private AssetManager assetManager;
     private UiContainer uiContainer;
+    @Autowired
+    private UserData userData;
 
     public PeopleScreen(AssetManager assetManager){
         this.assetManager = assetManager;
@@ -44,6 +48,9 @@ public class PeopleScreen extends BasicGameScreen {
         } catch (SerializationException e) {
             e.printStackTrace();
         }
+        userData = Mdx.di.getBean(UserData.class);
+        System.out.println(userData);
+        System.out.println(userData.getPerson().getAge());
     }
 
     @Override
