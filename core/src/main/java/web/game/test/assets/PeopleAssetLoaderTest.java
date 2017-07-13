@@ -52,6 +52,7 @@ public class PeopleAssetLoaderTest {
         assertTrue(Gdx.files.internal(SAMPLE_ASSET_DIRECTORY).exists());
     }
 
+    // Check if it is filtered by suffix
     @Test
     public void testIsSuffixMethodUsingRight(){
         FileHandle[] atlasFileArray = Gdx.files.internal(SAMPLE_ASSET_DIRECTORY).list(SAMPLE_ASSET_SUFFIX);
@@ -65,13 +66,13 @@ public class PeopleAssetLoaderTest {
     }
 
     @Test
-    public void testLoadAtlas(){
+    public void testLoadAll(){
         AssetManager assetManager = dummyPeopleGame.getAssetManager();
-        //Before Loading
+        // Before Loading, check is not loaded
         assertFalse(assetManager.isLoaded(SAMPLE_ASSET_PATH, TextureAtlas.class));
 
-        //After Loading
-        PeopleAssetLoader.loadAtlas(assetManager);
+        // After Loading, check is loaded
+        PeopleAssetLoader.loadAll(assetManager);
         assertTrue(assetManager.isLoaded(SAMPLE_ASSET_PATH, TextureAtlas.class));
     }
 

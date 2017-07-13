@@ -32,13 +32,8 @@ public class PeopleGame extends ScreenBasedGame {
     public void initialise() {
         FileHandleResolver fileHandleResolver = new FallbackFileHandleResolver(new ClasspathFileHandleResolver(), new InternalFileHandleResolver());
         assetManager = new AssetManager(fileHandleResolver);
-        assetManager.setLoader(UiTheme.class, new UiThemeLoader(fileHandleResolver));
-        assetManager.load(UiTheme.DEFAULT_THEME_FILENAME, UiTheme.class);
-        assetManager.load("texture/ui/main/people_header.png", Texture.class);
-        assetManager.load("texture/ui/blank/blank_height_150.png", Texture.class);
-        PeopleAssetLoader.loadAtlas(assetManager);
-        assetManager.load("sound/bgm/bgm_tam-g15.mp3", Music.class);
-        assetManager.finishLoading();
+
+        PeopleAssetLoader.loadAll(assetManager);
         scanDependency();
 
         addScreen(new LoadingScreen(assetManager));

@@ -14,6 +14,4 @@ import web.game.people.model.Person;
 public class UserData {
     @Autowired
     private Person person;
-    public UserData(){
-    }
 }
