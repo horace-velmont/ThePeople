@@ -10,7 +10,7 @@ eclipse.project {
 dependencies {
     compile 'junit:junit:4.11'
     compile 'junit:junit:4.12'
-    compile 'junit:junit:4.12'
     compile 'org.mini2Dx:mini2Dx-headless:1.5.2'
     compile 'com.mobidevelop.robovm:robovm-rt:2.3.0'
+    compile 'org.mockito:mockito-all:1.10.19'
 }

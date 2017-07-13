@@ -58,8 +58,9 @@ project(":core") {
         compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-ai:$aiVersion"
         compileOnly "org.projectlombok:lombok:1.16.18"
-
+        testCompile "org.mockito:mockito-all:1.10.19"
         testCompile "junit:junit:4.11"
+
     }
 }
 
