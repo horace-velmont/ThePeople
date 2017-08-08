@@ -3,27 +3,59 @@
     <visibility>VISIBLE</visibility>
     <verticalAlignment>TOP</verticalAlignment>
     <horizontalAlignment>CENTER</horizontalAlignment>
-    <children length="2">
+    <children length="3">
         <value class="org.mini2Dx.ui.element.Row" id="headerRow">
             <visibility>VISIBLE</visibility>
             <children length="1">
                 <value class="org.mini2Dx.ui.element.Image" id="peopleHeader">
+                    <responsive>true</responsive>
                     <visibility>VISIBLE</visibility>
                     <texturePath>texture/ui/main/people_header.png</texturePath>
                 </value>
             </children>
+        </value>
+        <value class="org.mini2Dx.ui.element.Row" id="magiAnimRow">
+            <visibility>VISIBLE</visibility>
             <children length="1">
-                <value class="org.mini2Dx.ui.element.TextButton" id="textButton">
+                <value class="org.mini2Dx.ui.element.Image" id="peopleHeader">
+                    <visibility>VISIBLE</visibility>
+                    <texturePath>texture/ui/blank/blank_height_150.png</texturePath>
+                </value>
+            </children>
+        </value>
+        <value class="org.mini2Dx.ui.element.Row" id="gameMenuRow">
+            <visibility>VISIBLE</visibility>
+            <children length="3">
+                <value class="org.mini2Dx.ui.element.TextButton" id="newGameButton">
                     <visibility>VISIBLE</visibility>
                     <children length="1">
                         <value class="org.mini2Dx.ui.element.Label">
                             <visibility>VISIBLE</visibility>
-                            <text>TEST</text>
+                            <text>START GAME</text>
+                        </value>
+                    </children>
+                </value>
+                <value class="org.mini2Dx.ui.element.TextButton" id="loadGameButton">
+                    <visibility>VISIBLE</visibility>
+                    <children length="1">
+                        <value class="org.mini2Dx.ui.element.Label">
+                            <visibility>VISIBLE</visibility>
+                            <text>LOAD GAME</text>
+                        </value>
+                    </children>
+                </value>
+                <value class="org.mini2Dx.ui.element.TextButton" id="quitGameButton">
+                    <visibility>VISIBLE</visibility>
+                    <children length="1">
+                        <value class="org.mini2Dx.ui.element.Label">
+                            <visibility>VISIBLE</visibility>
+                            <text>Quit Game</text>
                             <horizontalAlignment>CENTER</horizontalAlignment>
                         </value>
                     </children>
                 </value>
             </children>
         </value>
+
     </children>
 </data>

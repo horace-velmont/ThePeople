@@ -10,8 +10,8 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		DesktopMini2DxConfig config = new DesktopMini2DxConfig(PeopleGame.GAME_IDENTIFIER);
 		config.title = "The People";
-		config.width = 540;
-		config.height = 960;
+		config.width = PeopleGame.GAME_WIDTH;
+		config.height = PeopleGame.GAME_HEIGHT;
 		config.vSyncEnabled = true;
 		new DesktopMini2DxGame(new PeopleGame(), config);
 	}

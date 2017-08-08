@@ -1,0 +1,41 @@
+
+magi_victory.png
+size: 512,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+magi_victory
+  rotate: false
+  xy: 2, 2
+  size: 74, 92
+  orig: 74, 92
+  offset: 0, 0
+  index: 4
+magi_victory
+  rotate: false
+  xy: 78, 4
+  size: 75, 90
+  orig: 75, 90
+  offset: 0, 0
+  index: 5
+magi_victory
+  rotate: false
+  xy: 155, 21
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: 1
+magi_victory
+  rotate: false
+  xy: 220, 21
+  size: 54, 73
+  orig: 54, 73
+  offset: 0, 0
+  index: 3
+magi_victory
+  rotate: false
+  xy: 276, 20
+  size: 52, 74
+  orig: 52, 74
+  offset: 0, 0
+  index: 2
