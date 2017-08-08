@@ -3,12 +3,15 @@
     <visibility>VISIBLE</visibility>
     <verticalAlignment>TOP</verticalAlignment>
     <horizontalAlignment>CENTER</horizontalAlignment>
-    <children length="1">
+    <flexDirection>COLUMN</flexDirection>
+    <children length="2">
+
         <value class="org.mini2Dx.ui.element.Row" id="selectRow">
             <visibility>VISIBLE</visibility>
             <children length="2">
                 <value class="org.mini2Dx.ui.element.Column" id="loadColumn">
                     <visibility>VISIBLE</visibility>
+                    <layout>xs-6c</layout>
                     <children length="1">
                         <value class="org.mini2Dx.ui.element.TextButton" id="loadButton">
                             <visibility>VISIBLE</visibility>
@@ -23,6 +26,7 @@
                 </value>
                 <value class="org.mini2Dx.ui.element.Column" id="newStartColumn">
                     <visibility>VISIBLE</visibility>
+                    <layout>xs-6c</layout>
                     <children length="1">
                         <value class="org.mini2Dx.ui.element.TextButton" id="newStartButton">
                             <visibility>VISIBLE</visibility>
