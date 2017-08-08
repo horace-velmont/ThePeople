@@ -5,23 +5,32 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Array;
+import org.lwjgl.openal.AL;
 import org.mini2Dx.core.Mdx;
 import org.mini2Dx.core.game.GameContainer;
+import org.mini2Dx.core.game.ScreenBasedGame;
 import org.mini2Dx.core.graphics.Animation;
 import org.mini2Dx.core.graphics.Graphics;
 import org.mini2Dx.core.graphics.Sprite;
 import org.mini2Dx.core.graphics.TextureRegion;
 import org.mini2Dx.core.screen.GameScreen;
 import org.mini2Dx.core.screen.ScreenManager;
+import org.mini2Dx.core.screen.transition.FadeInTransition;
+import org.mini2Dx.core.screen.transition.FadeOutTransition;
 import org.mini2Dx.core.serialization.SerializationException;
 import org.mini2Dx.ui.UiContainer;
 import org.mini2Dx.ui.element.AlignedModal;
 import org.mini2Dx.ui.element.Row;
+import org.mini2Dx.ui.element.TextButton;
 import org.mini2Dx.ui.element.UiElement;
+import org.mini2Dx.ui.event.ActionEvent;
+import org.mini2Dx.ui.listener.ActionListener;
 import org.mini2Dx.ui.style.UiTheme;
 import web.game.people.PeopleGame;
 import web.game.people.gameData.UserData;
+import web.game.people.utility.XmlModalMaker;
 
 /**
  * Created by Velmont on 2017-07-11.
@@ -33,19 +42,34 @@ public class MainScreen extends PeopleScreen {
     }
 
     @Override
-    public void initialise(GameContainer gc) {
-        Gdx.app.log("Test", "Played Initialize");
+    public void initialise(final GameContainer gc) {
         uiContainer = new UiContainer(gc, assetManager);
-        try {
 
-            AlignedModal modal = Mdx.xml.fromXml(Gdx.files.internal("xml/ui/mainModal.xml").reader(), AlignedModal.class);
+        ScreenBasedGame sc = (ScreenBasedGame)gc;
+        final ScreenManager screenManager = sc.getScreenManager();
 
-            uiContainer.add(modal);
-        } catch (SerializationException e) {
-            e.printStackTrace();
-        }
+        addModal(ScreenEnum.MAIN.nameString);
+        Gdx.input.setInputProcessor(uiContainer);
+
+        TextButton newGameButton = (TextButton) modal.getElementById("newGameButton");
+        newGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void onActionBegin(ActionEvent event) {
+                screenManager.enterGameScreen(ScreenEnum.SELECT.ordinal(), new FadeOutTransition(),
+                        new FadeInTransition());
+            }
+
+            @Override
+            public void onActionEnd(ActionEvent event) {
+
+            }
+        });
+
+        // load Data
         userData = Mdx.di.getBean(UserData.class);
 
+
+        // 추가 UI
         TextureAtlas magiAtlas = assetManager.get("texture/animation/magi_victory.atlas", TextureAtlas.class);
         magiAnimation = new Animation();
         Array<TextureAtlas.AtlasRegion> magiSprites = magiAtlas.findRegions("magi_victory");

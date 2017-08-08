@@ -16,10 +16,7 @@ import org.mini2Dx.ui.UiContainer;
 import org.mini2Dx.ui.UiThemeLoader;
 import org.mini2Dx.ui.style.UiTheme;
 import web.game.people.assets.PeopleAssetLoader;
-import web.game.people.screen.LoadingScreen;
-import web.game.people.screen.MainScreen;
-import web.game.people.screen.PeopleScreen;
-import web.game.people.screen.ScreenEnum;
+import web.game.people.screen.*;
 
 public class PeopleGame extends ScreenBasedGame {
 	public static final String GAME_IDENTIFIER = "web.game.people";
@@ -36,8 +33,9 @@ public class PeopleGame extends ScreenBasedGame {
         PeopleAssetLoader.loadAll(assetManager);
         scanDependency();
 
-        addScreen(new LoadingScreen(assetManager));
-        addScreen(new MainScreen(assetManager));
+        this.addScreen(new LoadingScreen(assetManager));
+        this.addScreen(new MainScreen(assetManager));
+        this.addScreen(new SelectScreen(assetManager));
 
     }
 

@@ -116,6 +116,7 @@ idea {
                     facet(type: "android", name: "Android") {
                         configuration {
                             option(name: "UPDATE_PROPERTY_FILES", value:"true")
+                            all*.exclude group: 'commons-logging', module: 'commons-logging'
                         }
                     }
                 }

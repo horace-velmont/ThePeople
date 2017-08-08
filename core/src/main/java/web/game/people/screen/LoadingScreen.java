@@ -13,15 +13,16 @@ import org.mini2Dx.core.screen.transition.FadeOutTransition;
  * Created by Velmont on 2017-07-10.
  */
 public class LoadingScreen extends PeopleScreen {
-
     private float loadingTime = 4f;
 
     public LoadingScreen(AssetManager assetManager) {
         super(assetManager);
     }
 
+    @Override
     public void initialise(GameContainer gc) {}
 
+    @Override
     public void update(GameContainer gc, ScreenManager screenManager, float delta) {
         if(loadingTime > 0f) {
             loadingTime -= delta;
@@ -36,14 +37,18 @@ public class LoadingScreen extends PeopleScreen {
         }
     }
 
+    @Override
     public void interpolate(GameContainer gc, float alpha) {
     }
 
+    @Override
     public void render(GameContainer gc, Graphics g) {
         g.drawString("Loading...", 32, 32);
     }
 
+    @Override
     public int getId() {
+
         return ScreenEnum.LOADING.ordinal();
     }
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<data id="mainModal">
+    <visibility>VISIBLE</visibility>
+    <verticalAlignment>TOP</verticalAlignment>
+    <horizontalAlignment>CENTER</horizontalAlignment>
+    <children length="1">
+        <value class="org.mini2Dx.ui.element.Row" id="selectRow">
+            <visibility>VISIBLE</visibility>
+            <children length="2">
+                <value class="org.mini2Dx.ui.element.Column" id="loadColumn">
+                    <visibility>VISIBLE</visibility>
+                    <children length="1">
+                        <value class="org.mini2Dx.ui.element.TextButton" id="loadButton">
+                            <visibility>VISIBLE</visibility>
+                            <children length="1">
+                                <value class="org.mini2Dx.ui.element.Label">
+                                    <visibility>VISIBLE</visibility>
+                                    <text>LOAD GAME</text>
+                                </value>
+                            </children>
+                        </value>
+                    </children>
+                </value>
+                <value class="org.mini2Dx.ui.element.Column" id="newStartColumn">
+                    <visibility>VISIBLE</visibility>
+                    <children length="1">
+                        <value class="org.mini2Dx.ui.element.TextButton" id="newStartButton">
+                            <visibility>VISIBLE</visibility>
+                            <children length="1">
+                                <value class="org.mini2Dx.ui.element.Label">
+                                    <visibility>VISIBLE</visibility>
+                                    <text>LOAD GAME</text>
+                                </value>
+                            </children>
+                        </value>
+                    </children>
+                </value>
+            </children>
+        </value>
+
+    </children>
+</data>

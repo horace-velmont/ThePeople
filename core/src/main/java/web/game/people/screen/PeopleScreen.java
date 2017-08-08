@@ -24,6 +24,7 @@ import org.mini2Dx.ui.element.AlignedModal;
 import org.mini2Dx.ui.style.UiTheme;
 import web.game.people.PeopleGame;
 import web.game.people.gameData.UserData;
+import web.game.people.utility.XmlModalMaker;
 
 /**
  * Created by Velmont on 2017-07-03.
@@ -33,8 +34,14 @@ public abstract class PeopleScreen extends BasicGameScreen {
     protected UiContainer uiContainer;
     @Autowired
     protected UserData userData;
+    protected AlignedModal modal;
 
     public PeopleScreen(AssetManager assetManager){
         this.assetManager = assetManager;
+    }
+
+    protected void addModal(String modalName){
+        modal = XmlModalMaker.makeXmlModal(modalName);
+        uiContainer.add(modal);
     }
 }
